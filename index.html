@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- API enpoints : -->
+    <!-- https://pokeapi.co/api/v2/pokemon -->
+    <!-- https://pokeapi.co/api/v2/pokemon-color/ -->
+    <!-- https://pokeapi.co/api/v2/ability/ -->
+    <!-- https://pokeapi.co/api/v2/type -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid p-0" id="home">
+        <div class="bg-danger p-3">
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white active" href="#home" onClick="displayPokeball()">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#search-input">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#pagination-container">PokeMon</a>
+                </li>
+              </ul>
+        </div>
+        <div class="text-center jumbotron-fluid p-0 mb-0" id="img-container">
+            <div class="container-fluid">
+                <img class="img-fluid" id="img" src="https://wallpaperaccess.com/full/45649.png" alt="logo">
+                <h5>* Tap on the pokeball to release the pokemon, click on home to capture them again</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex flex-row flex-wrap mt-5" id="pagination-container">
+        <section class="col-md-4 align-self-center text-center">
+            <p>View  <select name="" id="items">
+                <option value="8" selected>8</option>
+                <option value="16">16</option>
+                <option value="24">24</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+            </select>  pokemon in a page</p>
+        </section>
+        <nav class="col-md-4 text-center align-self-center mt-3">
+            <ul class="pagination justify-content-center">
+              <li class="page-item mx-auto">
+                <button class="btn btn-sm btn-primary" href="#pokedox-container" onClick="paginatePrevious()" id="previous-button">Previous</button>
+              </li>
+              <p class="mx-3">Page <span id="start-page"></span> of <span id="end-page"></span></p>
+              <li class="page-item mx-auto">
+                <button class="btn btn-sm btn-primary" href="#pokedox-container" onClick="paginateNext()" id="next-button">Next</button>
+              </li>
+            </ul>
+        </nav>
+        <div class="container col-md-4 text-center align-self-center">
+            <label class="mx-2">Category :</label>
+            <select class="mx-2" name="" id="search-input">
+                <option value="pokemon" selected>All</option>
+                <option value="pokemon-color">Color</option>
+                <option value="type">Type</option>
+                <option value="ability">Ability</option>
+            </select>
+        </div>
+    </div>
+    <div class="container-fluid" id="pokedox-container">
+        <div class="row justify-content-around">
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

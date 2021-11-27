@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#img {
+    height: 600px;
+    width: 700px;
+}
+
+.jumbotron-fluid {
+    background-color: #383838;
+    height: 600px;
+}
+
+@media (max-width: 706px) {
+    #img {
+        height: 300px;
+        width: 350px;
+    }
+    
+    .jumbotron-fluid {
+        background-color: #383838;
+        height: 300px;
+    }
+}
+
+.card {
+    margin: 50px;
+}
+
+.card-footer {
+    border: 0;
+}
